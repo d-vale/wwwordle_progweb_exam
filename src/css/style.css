@@ -1,0 +1,53 @@
+@import "reset.css";
+
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, sans-serif;
+    gap: 2rem;
+    height: 100vh;
+    justify-content: center;
+}
+
+main {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+    width: 500px;
+    height: 600px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    margin: 0 auto;
+}
+
+form[inert] {
+    input {
+        background-color:hsl(0, 0%, 84%)
+    }
+}
+
+input.letter {
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    transition: all 0.2s;
+
+    &.absent {
+        background-color: hsl(0, 0%, 37%);
+    }
+    &.present {
+        background-color: hsl(57, 100%, 40%);
+    }
+    &.correct {
+        background-color: hsl(120, 100%, 30%);
+    }
+}
